@@ -4,7 +4,7 @@ const menu = ['buy crypto', 'markets', 'trade', 'finance', 'learn', 'support', '
 
 <template>
   <main>
-    <div class="w-full min-h-screen font-sans text-gray-700">
+    <div class="w-full min-h-screen font-sans text-gray-300">
       <div class="bg-gradient-to-r from-[#000000] to-[#0B0033]">
         <div class="px-6 mx-auto max-w-6xl">
           <div class="flex justify-between items-center py-10">
