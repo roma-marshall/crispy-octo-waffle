@@ -5,7 +5,7 @@ const menu = ['buy crypto', 'markets', 'trade', 'finance', 'learn', 'support', '
 <template>
   <main>
     <div class="w-full min-h-screen font-sans text-gray-700">
-      <div class="bg-gradient-to-b from-[#000000] to-[#0B0033]">
+      <div class="bg-gradient-to-r from-[#000000] to-[#0B0033]">
         <div class="px-6 mx-auto max-w-6xl">
           <div class="flex justify-between items-center py-10">
             <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 161 48" width="161" height="48">
