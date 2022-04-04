@@ -1,9 +1,37 @@
 <script setup>
+const menu = ['buy crypto', 'markets', 'trade', 'finance', 'learn', 'support', 'more']
 
 </script>
 
 <template>
-  <h1 class="text-center text-indigo-300">hello world</h1>
+  <main>
+    <div class="w-full min-h-screen font-sans text-gray-700">
+      <div class="bg-gradient-to-b from-[#000000] to-[#0B0033]">
+        <div class="px-6 mx-auto max-w-6xl">
+          <div class="flex justify-between items-center py-10">
+            <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 161 48" width="161" height="48">
+              <path id="форма 2" fill="#0f0e0c" d="m42.3 43.2v-2l86.7 0.3v2z"/>
+              <text id="EXchange" style="transform: matrix(1,0,0,1,42,36)" >
+                <tspan x="0" y="0" font-size="24px" fill="#ffffff" font-weight="400" font-family="DejaVuSans">E</tspan><tspan  y="0" font-size="24px" fill="#ffffff" font-weight="400" font-family="DejaVuSans">X</tspan><tspan  y="0" font-size="24px" fill="#ffffff" font-weight="400" font-family="DejaVuSans">c</tspan><tspan  y="0" font-size="24px" fill="#ffffff" font-weight="400" font-family="DejaVuSans">h</tspan><tspan  y="0" font-size="24px" fill="#ffffff" font-weight="400" font-family="DejaVuSans">a</tspan><tspan  y="0" font-size="24px" fill="#ffffff" font-weight="400" font-family="DejaVuSans">n</tspan><tspan  y="0" font-size="24px" fill="#ffffff" font-weight="400" font-family="DejaVuSans">g</tspan><tspan  y="0" font-size="24px" fill="#ffffff" font-weight="400" font-family="DejaVuSans">e</tspan><tspan  y="0" font-size="24px" fill="#ffffff" font-weight="400" font-family="DejaVuSans">
+              </tspan>
+              </text>
+              <path id="форма 3" fill="none" stroke="#ffffff" stroke-width="3" d="m2 17h25v25h-25z"/>
+              <path id="Слой 1" fill="none" stroke="#ffffff" stroke-width="3" d="m14 5h25v25h-25z"/>
+            </svg>
+            <nav class="flex items-center space-x-10">
+              <a
+                  v-for="item in menu"
+                  class="hover:text-white"
+                  href="#"
+              >
+                {{ item }}
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </template>
 
 <style scoped>
