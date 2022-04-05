@@ -1,11 +1,3 @@
-<script setup>
-const menu = ['buy crypto', 'markets', 'trade', 'finance', 'learn', 'support', 'more']
-const target = ['Popular assets', 'New assets', 'Gains ranking', 'Turnover ranking']
-const fieldName = ['Asset', 'Last price', 'Today\'s change', 'Chart', 'Trade']
-const crypto = ['BTC', '46000$', '+0.35%', 'chart', 'trade']
-const crypto2 = ['ETH', '4300$', '+0.25%', 'chart', 'trade']
-</script>
-
 <template>
   <main>
     <div class="w-full min-h-screen font-sans text-gray-300">
@@ -70,6 +62,26 @@ const crypto2 = ['ETH', '4300$', '+0.25%', 'chart', 'trade']
     </div>
   </main>
 </template>
+
+<script>
+export default {
+  setup() {
+    const menu = ['buy crypto', 'markets', 'trade', 'finance', 'learn', 'support', 'more']
+    const target = ['Popular assets', 'New assets', 'Gains ranking', 'Turnover ranking']
+    const fieldName = ['Asset', 'Last price', 'Today\'s change', 'Chart', 'Trade']
+    const crypto = ['BTC', '46000$', '+0.35%', 'chart', 'trade']
+    const crypto2 = ['ETH', '4300$', '+0.25%', 'chart', 'trade']
+    return {
+      menu,
+      target,
+      fieldName,
+      crypto,
+      crypto2
+    }
+  }
+}
+
+</script>
 
 <style scoped>
 
