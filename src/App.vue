@@ -52,17 +52,19 @@ const crypto2 = ['ETH', '4300$', '+0.25%', 'chart', 'trade']
             </a>
           </div>
           <div class="flex justify-center items-center text-xs text-gray-400 space-x-10 py-10">
-            <ul v-for="(item, index) in fieldName">
+            <ul
+                class="px-10"
+                v-for="(item, index) in fieldName"
+            >
               {{ item }}
-              <li>
+              <li class="text-base text-white mt-10">
                 {{ crypto[index] }}
               </li>
-              <li>
+              <li class="text-base text-white my-5">
                 {{ crypto2[index] }}
               </li>
             </ul>
           </div>
-
         </div>
       </div>
     </div>
