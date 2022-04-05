@@ -57,6 +57,9 @@
               </li>
             </ul>
           </div>
+          <div class="flex justify-center items-center text-xs text-gray-400 space-x-10 py-10">
+            {{ result }}
+          </div>
         </div>
       </div>
     </div>
@@ -64,6 +67,8 @@
 </template>
 
 <script>
+import {ref} from 'vue'
+
 export default {
   setup() {
     const menu = ['buy crypto', 'markets', 'trade', 'finance', 'learn', 'support', 'more']
@@ -71,12 +76,20 @@ export default {
     const fieldName = ['Asset', 'Last price', 'Today\'s change', 'Chart', 'Trade']
     const crypto = ['BTC', '46000$', '+0.35%', 'chart', 'trade']
     const crypto2 = ['ETH', '4300$', '+0.25%', 'chart', 'trade']
+    const url = 'https://api.alternative.me/v2/ticker/?limit=10'
+    const result = ref(null)
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => result.value = data)
+
     return {
       menu,
       target,
       fieldName,
       crypto,
-      crypto2
+      crypto2,
+      result
     }
   }
 }
