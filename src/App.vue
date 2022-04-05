@@ -1,3 +1,20 @@
+<script setup>
+import {ref} from 'vue'
+import Logo from './assets/img/logo.svg'
+
+const menu = ['buy crypto', 'markets', 'trade', 'finance', 'learn', 'support', 'more']
+const target = ['Popular assets', 'New assets', 'Gains ranking', 'Turnover ranking']
+const fieldName = ['Asset', 'Last price', 'Today\'s change', 'Chart', 'Trade']
+const crypto = ['BTC', '46000$', '+0.35%', 'chart', 'trade']
+const crypto2 = ['ETH', '4300$', '+0.25%', 'chart', 'trade']
+const url = 'https://api.alternative.me/v2/ticker/?limit=10'
+const result = ref(null)
+
+fetch(url)
+    .then(response => response.json())
+    .then(data => result.value = data)
+</script>
+
 <template>
   <main>
     <div class="w-full min-h-screen font-sans text-gray-300">
@@ -48,41 +65,6 @@
     </div>
   </main>
 </template>
-
-<script>
-import {ref} from 'vue'
-import Logo from './assets/img/logo.svg'
-
-export default {
-  components: {
-    Logo
-  },
-  setup() {
-    const menu = ['buy crypto', 'markets', 'trade', 'finance', 'learn', 'support', 'more']
-    const target = ['Popular assets', 'New assets', 'Gains ranking', 'Turnover ranking']
-    const fieldName = ['Asset', 'Last price', 'Today\'s change', 'Chart', 'Trade']
-    const crypto = ['BTC', '46000$', '+0.35%', 'chart', 'trade']
-    const crypto2 = ['ETH', '4300$', '+0.25%', 'chart', 'trade']
-    const url = 'https://api.alternative.me/v2/ticker/?limit=10'
-    const result = ref(null)
-
-    fetch(url)
-        .then(response => response.json())
-        .then(data => result.value = data)
-
-    return {
-      Logo,
-      menu,
-      target,
-      fieldName,
-      crypto,
-      crypto2,
-      result
-    }
-  }
-}
-
-</script>
 
 <style scoped>
 
