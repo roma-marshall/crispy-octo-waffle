@@ -9,8 +9,6 @@
         <tspan y="0" font-size="24px" fill="#ffffff" font-weight="400" font-family="DejaVuSans">n</tspan>
         <tspan y="0" font-size="24px" fill="#ffffff" font-weight="400" font-family="DejaVuSans">g</tspan>
         <tspan y="0" font-size="24px" fill="#ffffff" font-weight="400" font-family="DejaVuSans">e</tspan>
-        <tspan y="0" font-size="24px" fill="#ffffff" font-weight="400" font-family="DejaVuSans">
-        </tspan>
     </text>
     <path fill="none" stroke="#ffffff" stroke-width="3" d="m2 17h25v25h-25z"/>
     <path fill="none" stroke="#ffffff" stroke-width="3" d="m14 5h25v25h-25z"/>
