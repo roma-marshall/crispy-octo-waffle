@@ -7,7 +7,7 @@ const target = ['Popular assets', 'New assets', 'Gains ranking', 'Turnover ranki
 const fieldName = ['Asset', 'Last price', 'Today\'s change', 'Chart', 'Trade']
 const crypto = ['BTC', '46000$', '+0.35%', 'chart', 'trade']
 const crypto2 = ['ETH', '4300$', '+0.25%', 'chart', 'trade']
-const url = 'https://api.alternative.me/v2/ticker/?limit=5'
+const url = 'https://api.alternative.me/v2/ticker/?limit=8'
 const result = ref(null)
 
 fetch(url)
@@ -50,25 +50,23 @@ fetch(url)
                 class="px-10"
             >
               {{ item }}
-              {{ i }}
-
               <ul
-                  v-for="(item) in result['data']"
+                  v-for="(item, key) in result['data']"
                   class="text-base text-white mt-10"
               >
-                <li v-if="index === 0">
+                <li v-if="index === 0 && key !== 3">
                   {{ item['symbol'] }}
                 </li>
-                <li v-if="index === 1">
+                <li v-if="index === 1 && key !== 3">
                   {{ item['quotes']['USD']['price'] }}$
                 </li>
-                <li v-if="index === 2">
+                <li v-if="index === 2 && key !== 3">
                   {{ item['quotes']['USD']['percentage_change_24h'].toFixed(2) }}%
                 </li>
-                <li v-if="index === 3">
+                <li v-if="index === 3 && key !== 3">
                   none
                 </li>
-                <li v-if="index === 4">
+                <li v-if="index === 4 && key !== 3">
                   none
                 </li>
               </ul>
