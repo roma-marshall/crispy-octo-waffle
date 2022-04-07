@@ -47,7 +47,7 @@ fetch(url)
           <div class="flex justify-center items-center text-xs text-gray-400 space-x-10 py-10">
             <div
                 v-for="(item, index) in fieldName"
-                class="px-10"
+                class="px-10 pb-10"
             >
               {{ item }}
               <ul
