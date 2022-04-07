@@ -7,12 +7,13 @@ const target = ['Popular assets', 'New assets', 'Gains ranking', 'Turnover ranki
 const fieldName = ['Asset', 'Last price', 'Today\'s change', 'Chart', 'Trade']
 const crypto = ['BTC', '46000$', '+0.35%', 'chart', 'trade']
 const crypto2 = ['ETH', '4300$', '+0.25%', 'chart', 'trade']
-const url = 'https://api.alternative.me/v2/ticker/?limit=10'
+const url = 'https://api.alternative.me/v2/ticker/?limit=5'
 const result = ref(null)
 
 fetch(url)
     .then(response => response.json())
     .then(data => result.value = data)
+
 </script>
 
 <template>
@@ -22,7 +23,7 @@ fetch(url)
         <div class="px-6 mx-auto max-w-6xl">
           <div class="flex justify-between items-center py-10">
             <div class="cursor-pointer">
-              <Logo />
+              <Logo/>
             </div>
             <nav class="flex items-center space-x-10">
               <a
@@ -58,7 +59,9 @@ fetch(url)
             </ul>
           </div>
           <div class="flex justify-center items-center text-xs text-gray-400 space-x-10 py-10">
-            {{ result }}
+            <div v-for="(item, index) in result['data']">
+              {{ item }}
+            </div>
           </div>
         </div>
       </div>
