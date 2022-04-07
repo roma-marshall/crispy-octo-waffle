@@ -22,7 +22,7 @@ fetch(url)
             <div class="cursor-pointer">
               <Logo/>
             </div>
-            <nav class="flex items-center space-x-10">
+            <nav class="grid grid-cols-2 md:flex md:items-center md:space-x-10">
               <a
                   v-for="item in menu"
                   class="hover:text-white"
@@ -41,7 +41,7 @@ fetch(url)
               {{ item }}
             </a>
           </div>
-          <div class="flex justify-center items-center text-xs text-gray-400 space-x-10 py-10">
+          <div class="md:flex md:justify-center md:items-center md:space-x-10 text-xs text-gray-400 py-10">
             <div
                 v-for="(item, index) in fieldName"
                 class="px-10 pb-10"
