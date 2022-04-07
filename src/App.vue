@@ -45,22 +45,33 @@ fetch(url)
             </a>
           </div>
           <div class="flex justify-center items-center text-xs text-gray-400 space-x-10 py-10">
-            <ul
-                class="px-10"
+            <div
                 v-for="(item, index) in fieldName"
+                class="px-10"
             >
               {{ item }}
-              <li class="text-base text-white mt-10">
-                {{ crypto[index] }}
-              </li>
-              <li class="text-base text-white my-5">
-                {{ crypto2[index] }}
-              </li>
-            </ul>
-          </div>
-          <div class="flex justify-center items-center text-xs text-gray-400 space-x-10 py-10">
-            <div v-for="(item, index) in result['data']">
-              {{ item }}
+              {{ i }}
+
+              <ul
+                  v-for="(item) in result['data']"
+                  class="text-base text-white mt-10"
+              >
+                <li v-if="index === 0">
+                  {{ item['symbol'] }}
+                </li>
+                <li v-if="index === 1">
+                  {{ item['quotes']['USD']['price'] }}$
+                </li>
+                <li v-if="index === 2">
+                  {{ item['quotes']['USD']['percentage_change_24h'].toFixed(2) }}%
+                </li>
+                <li v-if="index === 3">
+                  none
+                </li>
+                <li v-if="index === 4">
+                  none
+                </li>
+              </ul>
             </div>
           </div>
         </div>
