@@ -5,7 +5,7 @@ import Logo from './assets/img/logo.svg'
 const menu = ['buy crypto', 'markets', 'trade', 'finance', 'learn', 'support', 'more']
 const target = ['Popular assets', 'New assets', 'Gains ranking', 'Turnover ranking']
 const fieldName = ['Asset', 'Last price', 'Today\'s change', 'Chart', 'Trade']
-const url = 'https://api.alternative.me/v2/ticker/?limit=8'
+const url = 'https://api.alternative.me/v2/ticker/?limit=9'
 const result = ref(null)
 
 fetch(url)
@@ -48,7 +48,7 @@ fetch(url)
             >
               {{ item }}
               <ul
-                  v-for="(item, key) in result['data']"
+                  v-for="(item, i, key) in result['data']"
                   class="text-base text-white mt-10"
               >
                 <li v-if="index === 0 && key !== 3">
