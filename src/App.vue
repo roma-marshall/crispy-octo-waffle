@@ -5,15 +5,12 @@ import Logo from './assets/img/logo.svg'
 const menu = ['buy crypto', 'markets', 'trade', 'finance', 'learn', 'support', 'more']
 const target = ['Popular assets', 'New assets', 'Gains ranking', 'Turnover ranking']
 const fieldName = ['Asset', 'Last price', 'Today\'s change', 'Chart', 'Trade']
-const crypto = ['BTC', '46000$', '+0.35%', 'chart', 'trade']
-const crypto2 = ['ETH', '4300$', '+0.25%', 'chart', 'trade']
 const url = 'https://api.alternative.me/v2/ticker/?limit=8'
 const result = ref(null)
 
 fetch(url)
     .then(response => response.json())
     .then(data => result.value = data)
-
 </script>
 
 <template>
@@ -61,13 +58,24 @@ fetch(url)
                   {{ item['quotes']['USD']['price'] }}$
                 </li>
                 <li v-if="index === 2 && key !== 3">
-                  {{ item['quotes']['USD']['percentage_change_24h'].toFixed(2) }}%
+                  <span
+                      v-if="item['quotes']['USD']['percentage_change_24h'] >= 0"
+                      class="text-green-500"
+                  >
+                    {{ item['quotes']['USD']['percentage_change_24h'].toFixed(2) }}%
+                  </span>
+                  <span
+                      v-else
+                      class="text-red-500"
+                  >
+                    {{ item['quotes']['USD']['percentage_change_24h'].toFixed(2) }}%
+                  </span>
                 </li>
                 <li v-if="index === 3 && key !== 3">
-                  none
+                  -
                 </li>
                 <li v-if="index === 4 && key !== 3">
-                  none
+                  <a href="#" class="hover:text-gray-300 cursor-pointer">Buy</a>
                 </li>
               </ul>
             </div>
